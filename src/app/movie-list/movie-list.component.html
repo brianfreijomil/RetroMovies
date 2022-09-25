@@ -9,30 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let movie of movies" [ngClass]="{'promotion': movie.promotion}">
             <td><img [src]="movie.image" [alt]="movie.name"></td>
             <td>{{movie.name}}</td>
             <td>{{movie.genre}}</td>
             <td>{{movie.price}}</td>
-            <td>{{movie.disponible}}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><span *ngIf="movie.disponible==false" class="badge text-bg-danger">NO ESTA DISPONIBLE</span></td>
         </tr>
     </tbody>
 </table>
